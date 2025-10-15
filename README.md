@@ -1,36 +1,39 @@
 # Activity Tracker (Dark)
 
-App de Electron con **modo dark**, **grabación de pantalla** (Start/Stop) y **screenshots**.
-Incluye configuración de **electron-builder** para empaquetar en macOS/Windows/Linux.
+Electron app with **dark mode**, **screen recording** (Start/Stop), and **screenshots**.
+Includes **electron-builder** configuration to package for macOS/Windows/Linux.
 
-## ¿Qué es electron-builder?
-Es una herramienta que empaqueta tu app de Electron en instaladores nativos (DMG para macOS, NSIS/EXE para Windows, AppImage para Linux), maneja firma/notarización y puede integrarse con auto-updates. En este proyecto ya está configurado con un `appId` y targets comunes.
+## What is electron-builder?
+It’s a tool that packages your Electron app into native installers (DMG for macOS, NSIS/EXE for Windows, AppImage for Linux).
+It handles code signing/notarization and can integrate with auto-updates.
+In this project, it’s already configured with a default `appId` and common build targets.
 
-## Requisitos
+## Requirements
 - Node 18+
 - npm
 
-## Desarrollo
+## Development
 ```bash
 npm i
 npm start
 ```
 
-## Build (instaladores)
+## Build (installers)
 ```bash
 npm run dist
 ```
-Los artefactos quedarán en `dist/`.
+The build artifacts will be generated in the `dist/` folder.
 
-> Para firmar / notarizar en macOS o Windows vas a necesitar certificados/credenciales. `electron-builder` soporta variables de entorno para eso.
+> To sign or notarize builds on macOS or Windows, you’ll need certificates/credentials.
+> `electron-builder` supports environment variables for that.
 
-## Sentry (opcional)
+## Sentry (optional)
 ```bash
 npm i -D @sentry/electron
-SENTRY_DSN=<tu_dsn> npm start
+SENTRY_DSN=<your_dsn> npm start
 ```
 
-## Notas
-- En macOS debés habilitar **Screen Recording** en Preferencias de Seguridad.
-- El botón **Start recording** comienza a grabar; **Stop** detiene y ofrece **Download** del `.webm`.
-- **Screenshot** agrega la imagen a la galería.
+## Notes
+- On macOS, you must enable **Screen Recording** in Security & Privacy preferences.
+- The **Start recording** button begins capturing; **Stop** ends it and provides a `.webm` **Download** link.
+- **Screenshot** adds the image to the gallery.
