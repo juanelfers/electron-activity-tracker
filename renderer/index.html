@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' blob: data:; media-src 'self' blob:; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <title>Activity Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="row" style="justify-content: space-between;">
+          <h1>Activity Tracker</h1>
+          <div class="status" id="status-pill"><span class="dot" id="dot"></span><span id="status">Idle</span></div>
+        </div>
+        <div class="controls">
+          <button id="btn-start" class="btn primary">Start recording</button>
+          <button id="btn-stop" class="btn danger" disabled>Stop</button>
+          <button id="btn-shot" class="btn">Screenshot</button>
+          <a id="download" class="link" style="margin-left:auto"></a>
+        </div>
+        <div class="media" id="gallery"></div>
+      </div>
+    </div>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

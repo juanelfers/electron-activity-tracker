@@ -1,0 +1,35 @@
+{
+  "name": "electron-capture-dark",
+  "version": "0.2.0",
+  "private": true,
+  "main": "index.js",
+  "description": "Electron app that records screen and takes screenshots, with dark UI.",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "pack": "electron-builder --dir"
+  },
+  "build": {
+    "appId": "com.example.activitytracker",
+    "productName": "Activity Tracker",
+    "files": [
+      "index.js",
+      "preload.js",
+      "renderer/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  }
+}
